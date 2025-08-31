@@ -8,6 +8,7 @@ import { observer } from 'mobx-react';
 import { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import * as SecureStore from 'expo-secure-store';
 
 interface SignInData {
   user_name: string; // Email or Username
@@ -115,12 +116,14 @@ const Index = () => {
     setIsLoading(true);
 
     authenticate(form)
-      .then(() => {
+      .then(async () => {
         setIsLoading(false);
         // generate a simple dummy access token
         const token = `token_${Date.now()}`;
 
         setToken(token);
+
+        await SecureStore.setItemAsync('accessToken', token);
       })
       .catch((err: Error) => {
         setIsLoading(false);
