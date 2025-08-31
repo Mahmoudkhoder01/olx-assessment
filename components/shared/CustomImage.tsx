@@ -14,7 +14,7 @@ interface CustomImageProps {
   blurhash?: string;
 }
 
-const fallbackImage = require('@/assets/images/home/searchnotfound.png');
+const fallbackImage = require('@/assets/images/not-found.jpg');
 
 const CustomImage: FC<CustomImageProps> = ({
   source,
@@ -25,7 +25,7 @@ const CustomImage: FC<CustomImageProps> = ({
   borderRadius,
   resizeMode = 'cover',
   blurhash,
-  placeholder = require('@/assets/images/auth/letsfix.png'),
+  placeholder = require('@/assets/images/placeholder.png'),
   ...props
 }) => {
   const [imageSource, setImageSource] = useState(source);

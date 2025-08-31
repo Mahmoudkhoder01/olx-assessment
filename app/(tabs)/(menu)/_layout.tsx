@@ -19,7 +19,6 @@ const AuthLayout = () => {
         ),
         contentStyle: {
           paddingTop: insets.top,
-          paddingBottom: insets.bottom + 16,
           marginHorizontal: 16,
         },
       }}
