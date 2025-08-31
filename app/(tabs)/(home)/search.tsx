@@ -4,7 +4,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 
 const Search = () => {
   return (
-    <KeyboardAwareScrollView>
+    <KeyboardAwareScrollView className='px-4'>
       <Input
         placeholder='Search'
         leftIcon={(color) => (

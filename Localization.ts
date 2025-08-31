@@ -21,6 +21,7 @@ export const translations = {
     home_screens: {
       index: 'Home',
       search: 'Search',
+      ad_details: 'Ad Details',
     },
     menu_screens: {
       menu: 'Menu',
@@ -58,6 +59,7 @@ export const translations = {
     home_screens: {
       index: 'الرئيسية',
       search: 'بحث',
+      ad_details: 'تفاصيل البيع',
     },
     menu_screens: {
       menu: 'القائمة',

@@ -19,7 +19,6 @@ const AuthLayout = () => {
         ),
         contentStyle: {
           paddingTop: insets.top,
-          marginHorizontal: 16,
         },
       }}
     >
@@ -28,6 +27,16 @@ const AuthLayout = () => {
       <Stack.Screen
         name='search'
         options={{ title: i18n.t('home_screens.search') }}
+      />
+
+      <Stack.Screen
+        name='category-list'
+        options={{ title: i18n.t('home_screens.category') }}
+      />
+
+      <Stack.Screen
+        name='ad-details'
+        options={{ title: i18n.t('home_screens.ad_details') }}
       />
     </Stack>
   );
