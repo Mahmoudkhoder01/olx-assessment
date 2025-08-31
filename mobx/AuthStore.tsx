@@ -1,4 +1,5 @@
 import { action, makeObservable, observable } from 'mobx';
+import * as SecureStore from 'expo-secure-store';
 
 class AuthStore {
   accessToken: string = '';
@@ -9,6 +10,8 @@ class AuthStore {
       setToken: action.bound,
       clearToken: action.bound,
     });
+
+    this.isLoggedIn();
   }
 
   setToken(token: string) {
@@ -17,6 +20,14 @@ class AuthStore {
 
   clearToken() {
     this.accessToken = '';
+  }
+
+  async isLoggedIn() {
+    const token = await SecureStore.getItemAsync('accessToken');
+
+    if (token) {
+      this.setToken(token);
+    }
   }
 }
 
