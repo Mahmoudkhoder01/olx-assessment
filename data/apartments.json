@@ -1,0 +1,104 @@
+{
+  "Apartments": [
+    {
+      "location": "Baabdat",
+      "title": "amazing apartment in the heart of Baabdat, prime location REF#CB123183",
+      "price": 245000,
+      "area": 202,
+      "bedrooms": 3,
+      "bathrooms": 4,
+      "agent": "Confidence Real Estate",
+      "image": "https://images.olx.com.lb/thumbnails/14464617-240x180.jpeg"
+    },
+    {
+      "location": "Ramlet el Bayda",
+      "title": "Luxury Apartment for Sale – Ramlet al-Baydahشقة فاخرة للبيع في الرملة",
+      "price": 1300000,
+      "area": 350,
+      "bedrooms": 3,
+      "bathrooms": 5,
+      "agent": "Raywhite Verdun",
+      "image": "https://images.olx.com.lb/thumbnails/14856439-240x180.jpeg"
+    },
+    {
+      "location": "Achrafieh",
+      "title": "Hot Deal - 270 Sqm - Exclusive Apartment For Sale In Monot",
+      "price": 740000,
+      "area": 250,
+      "bedrooms": 3,
+      "bathrooms": 4,
+      "agent": "Achrafieh Properties",
+      "image": "https://images.olx.com.lb/thumbnails/14914051-240x180.jpeg"
+    },
+    {
+      "location": "Sahel Alma",
+      "title": "Apartment+ Sea View for sale in Sahel Aalma - شقة للبيع في ساحل علما",
+      "price": 300000,
+      "area": 300,
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "agent": "I SOLD",
+      "image": "https://images.olx.com.lb/thumbnails/13283142-240x180.jpeg"
+    },
+    {
+      "location": "Bayada",
+      "title": "Apartment for sale in Biyada/ Duplex/ Under construction/ Garden",
+      "price": 1161955,
+      "area": 340,
+      "bedrooms": 3,
+      "bathrooms": 4,
+      "agent": "Robert",
+      "image": "https://images.olx.com.lb/thumbnails/14855746-240x180.jpeg"
+    },
+    {
+      "location": "Adonis",
+      "title": "RWK106EM - Under-Construction Project For Sale In Adonis",
+      "price": 200000,
+      "area": 155,
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "agent": "Ray White Lebanon Regional",
+      "image": "https://images.olx.com.lb/thumbnails/14847987-240x180.jpeg"
+    },
+    {
+      "location": "Ballouneh",
+      "title": "Ballounieh 165m2 | Prime Location | High End | Private Entrance | AC",
+      "price": 200000,
+      "area": 165,
+      "bedrooms": 2,
+      "bathrooms": 3,
+      "agent": "Yas Real Estate",
+      "image": "https://images.olx.com.lb/thumbnails/13537927-240x180.jpeg"
+    },
+    {
+      "location": "Koura",
+      "title": "GREAT CATCH IN THE HEART OF SAMRIEH AL-KOURA REF#BD124213",
+      "price": 95000,
+      "area": 150,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "agent": "Confidence Real Estate",
+      "image": "https://images.olx.com.lb/thumbnails/14828622-240x180.jpeg"
+    },
+    {
+      "location": "Chouf",
+      "title": "Apartment for sale in Ain Zain Chouf شقة للبيع في عين وزين الشوف",
+      "price": 120000,
+      "area": 150,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "agent": "Ideal Real Estate",
+      "image": "https://images.olx.com.lb/thumbnails/14584979-240x180.jpeg"
+    },
+    {
+      "location": "Ghbaleh",
+      "title": "Exclusive Villa for Sale in Ghbaleh ! REF#BT124849 !",
+      "price": 650000,
+      "area": 510,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "agent": "Confidence Real Estate",
+      "image": "https://images.olx.com.lb/thumbnails/14828208-240x180.jpeg"
+    }
+  ]
+}

@@ -9,9 +9,11 @@ import {
   TextInputProps,
   TouchableOpacity,
   TouchableWithoutFeedback,
+  useColorScheme,
   View,
 } from 'react-native';
 import Error from './Error';
+import { Colors } from '@/constants/Colors';
 
 export type InputProps = TextInputProps & {
   leftIcon?: (color: string) => ReactNode;
@@ -54,14 +56,14 @@ const Input = forwardRef<TextInput, InputProps>(
     },
     ref?: ForwardedRef<TextInput>,
   ) => {
-    const { colors } = useTheme();
+    const scheme = useColorScheme();
     const inputRef = useRef<TextInput>(null);
 
     const [isFocused, setIsFocused] = useState(false);
     const [isSecure, setIsSecure] = useState(!!secureTextEntry);
 
     const statusColors = {
-      focused: colors.primary,
+      focused: Colors[scheme ?? 'light'].primary,
       filled: '#000000',
       default: '#9E9E9E',
     };
@@ -99,7 +101,9 @@ const Input = forwardRef<TextInput, InputProps>(
             style={[
               styles.inputContainer,
               {
-                borderColor: isFocused ? colors.primary : 'transparent',
+                borderColor: isFocused
+                  ? Colors[scheme ?? 'light'].primary
+                  : 'transparent',
                 backgroundColor: isFocused ? '#EFF3FF' : '#F7F7F7',
               },
             ]}

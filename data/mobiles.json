@@ -1,0 +1,94 @@
+{
+  "Mobiles": [
+    {
+      "ad_image_url": "https://images.olx.com.lb/thumbnails/14916260-240x180.jpeg",
+      "ad_location_name_en": "Mar Elias",
+      "ad_location_name_lc": "مار الياس",
+      "ad_agent_name": "Classic Phone",
+      "ad_price": 149.0,
+      "ad_title": "Samsung a16 6/128gb gray ctc",
+      "ad_external_id": "116538046"
+    },
+    {
+      "ad_image_url": "https://images.olx.com.lb/thumbnails/13137185-240x180.jpeg",
+      "ad_location_name_en": "Adma w Dafnah",
+      "ad_location_name_lc": "أدما والدفنه",
+      "ad_agent_name": "Crazy Phone",
+      "ad_price": 131.0,
+      "ad_title": "Samsung Galaxy A16 128GB",
+      "ad_external_id": "116193490"
+    },
+    {
+      "ad_image_url": "https://images.olx.com.lb/thumbnails/14929006-240x180.jpeg",
+      "ad_location_name_en": "Beirut",
+      "ad_location_name_lc": "بيروت",
+      "ad_agent_name": "Iservice cell",
+      "ad_price": 1120.0,
+      "ad_title": "IPhone 15 Pro Max 256Gb Brand new sealed black color",
+      "ad_external_id": "116540673"
+    },
+    {
+      "ad_image_url": "https://images.olx.com.lb/thumbnails/13792396-240x180.jpeg",
+      "ad_location_name_en": "Chiyah",
+      "ad_location_name_lc": "الشياح",
+      "ad_agent_name": "DNS mobiles",
+      "ad_price": 1280.0,
+      "ad_title": "iphone 16pro 256G brand new",
+      "ad_external_id": "116322661"
+    },
+    {
+      "ad_image_url": "https://images.olx.com.lb/thumbnails/13024766-240x180.jpeg",
+      "ad_location_name_en": "Dekwaneh",
+      "ad_location_name_lc": "دكوانة",
+      "ad_agent_name": "Number1cell",
+      "ad_price": 375.0,
+      "ad_title": "Iphone 13 128gb",
+      "ad_external_id": "116081248"
+    },
+    {
+      "ad_image_url": "https://images.olx.com.lb/thumbnails/14912152-240x180.jpeg",
+      "ad_location_name_en": "Hazmiyeh",
+      "ad_location_name_lc": "حازمية",
+      "ad_agent_name": "A To Z Mobiles & Beyond",
+      "ad_price": 500.0,
+      "ad_title": "IPHONE 14 128GB OPEN BOX",
+      "ad_external_id": "116537226"
+    },
+    {
+      "ad_image_url": "https://images.olx.com.lb/thumbnails/14895039-240x180.jpeg",
+      "ad_location_name_en": "Beirut",
+      "ad_location_name_lc": "بيروت",
+      "ad_agent_name": "Iservice cell",
+      "ad_price": 1650.0,
+      "ad_title": "Samsung Z Fold 7 512Gb/12Ram BMS warranty screen used super clean",
+      "ad_external_id": "116530336"
+    },
+    {
+      "ad_image_url": "https://images.olx.com.lb/thumbnails/14740197-240x180.jpeg",
+      "ad_location_name_en": "Saida Downtown",
+      "ad_location_name_lc": "وسط صيدا",
+      "ad_agent_name": "DNS mobiles",
+      "ad_price": 1050.0,
+      "ad_title": "iphone 15 pro max 256G natural",
+      "ad_external_id": "116502405"
+    },
+    {
+      "ad_image_url": "https://images.olx.com.lb/thumbnails/14722853-240x180.jpeg",
+      "ad_location_name_en": "Baalbeck Town",
+      "ad_location_name_lc": "مدينة بعلبك",
+      "ad_agent_name": "Mhamed Lbazel",
+      "ad_price": 390.0,
+      "ad_title": "البزالية",
+      "ad_external_id": "116499124"
+    },
+    {
+      "ad_image_url": "https://images.olx.com.lb/thumbnails/14911897-240x180.jpeg",
+      "ad_location_name_en": "Hazmiyeh",
+      "ad_location_name_lc": "حازمية",
+      "ad_agent_name": "A To Z Mobiles & Beyond",
+      "ad_price": 375.0,
+      "ad_title": "IPHONE 13 128GB OPEN BOX",
+      "ad_external_id": "116537180"
+    }
+  ]
+}

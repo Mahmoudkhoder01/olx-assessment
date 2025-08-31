@@ -18,6 +18,24 @@ export const translations = {
       success: 'You have signed in successfully',
       invalid_credentials: 'Invalid username or password',
     },
+    home_screens: {
+      index: 'Home',
+      search: 'Search',
+      ad_details: 'Ad Details',
+    },
+    menu_screens: {
+      menu: 'Menu',
+      change_lang: 'Change Language',
+    },
+    menu_items: {
+      change_lang: 'Change Language',
+      logout: {
+        title: 'Log Out',
+        message: 'Are you sure you want to log out?',
+        cancel: 'Cancel',
+        confirm: 'Log Out',
+      },
+    },
   },
   ar: {
     sign_in: {
@@ -37,6 +55,24 @@ export const translations = {
       },
       success: 'تم تسجيل الدخول بنجاح',
       invalid_credentials: 'اسم المستخدم أو كلمة المرور غير صحيحة',
+    },
+    home_screens: {
+      index: 'الرئيسية',
+      search: 'بحث',
+      ad_details: 'تفاصيل البيع',
+    },
+    menu_screens: {
+      menu: 'القائمة',
+      change_lang: 'تغيير اللغة',
+    },
+    menu_items: {
+      change_lang: 'تغيير اللغة',
+      logout: {
+        title: 'تسجيل الخروج',
+        message: 'هل أنت متأكد أنك تريد تسجيل الخروج؟',
+        cancel: 'إلغاء',
+        confirm: 'تسجيل الخروج',
+      },
     },
   },
 };
