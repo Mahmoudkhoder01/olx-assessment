@@ -9,8 +9,11 @@ import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { I18nProvider } from '@/context/I18nContext';
+import { authStore } from '@/mobx/AuthStore';
+import { observer } from 'mobx-react';
 
-export default function RootLayout() {
+const RootLayout = observer(() => {
   const colorScheme = useColorScheme();
 
   const [loaded] = useFonts({
@@ -30,13 +33,32 @@ export default function RootLayout() {
     return null;
   }
 
+  const { accessToken } = authStore;
+
+  const hasToken = !!accessToken;
+
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
-        <Stack.Screen name='+not-found' />
-      </Stack>
+      <I18nProvider>
+        <Stack>
+          <Stack.Screen
+            name='(tabs)'
+            options={{ headerShown: false }}
+            redirect={!hasToken}
+          />
+
+          <Stack.Screen
+            name='(auth)'
+            options={{ headerShown: false }}
+            redirect={hasToken}
+          />
+
+          <Stack.Screen name='+not-found' />
+        </Stack>
+      </I18nProvider>
       <StatusBar style='auto' />
     </ThemeProvider>
   );
-}
+});
+
+export default RootLayout;

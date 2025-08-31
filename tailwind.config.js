@@ -6,11 +6,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#0059AB',
-        white: '#FFFFFF',
-        grey: '#CBCBCB',
-        black: '#000000',
-        lightGrey: '#F2F3F2',
+        primary: '#ee3a43 ',
       },
       fontFamily: {
         regular: 'UrbanistRegular',

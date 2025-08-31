@@ -5,11 +5,13 @@ import {
   StyleProp,
   StyleSheet,
   TouchableOpacity,
+  useColorScheme,
   View,
   ViewStyle,
 } from 'react-native';
 import TextResponsive from './TextResponsive';
 import { FC } from 'react';
+import { Colors } from '@/constants/Colors';
 
 type ButtonPropsComponent = {
   title: string;
@@ -34,7 +36,7 @@ const Button: FC<ButtonPropsComponent> = ({
   isValid = true,
   isLoading = false,
 }) => {
-  const { colors } = useTheme();
+  const scheme = useColorScheme();
 
   const handlePress = () => {
     if (isValid) onPress();
@@ -52,7 +54,9 @@ const Button: FC<ButtonPropsComponent> = ({
           styles.button,
           isValid && styles.validStyle,
           {
-            backgroundColor: isValid ? colors.primary : '#D0DEEB',
+            backgroundColor: isValid
+              ? Colors[scheme ?? 'light'].primary
+              : '#D0DEEB',
           },
           style,
         ]}
@@ -89,7 +93,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   validStyle: {
-    shadowColor: '#0059AB',
+    shadowColor: '#ee3a43',
     shadowOffset: {
       width: 0,
       height: 3,
