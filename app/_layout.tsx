@@ -8,10 +8,11 @@ import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
 
-import { useColorScheme } from '@/hooks/useColorScheme';
 import { I18nProvider } from '@/context/I18nContext';
+import { useColorScheme } from '@/hooks/useColorScheme';
 import { authStore } from '@/mobx/AuthStore';
 import { observer } from 'mobx-react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const RootLayout = observer(() => {
   const colorScheme = useColorScheme();
@@ -38,26 +39,28 @@ const RootLayout = observer(() => {
   const hasToken = !!accessToken;
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <I18nProvider>
-        <Stack>
-          <Stack.Screen
-            name='(tabs)'
-            options={{ headerShown: false }}
-            redirect={!hasToken}
-          />
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+        <I18nProvider>
+          <Stack>
+            <Stack.Screen
+              name='(tabs)'
+              options={{ headerShown: false }}
+              redirect={!hasToken}
+            />
 
-          <Stack.Screen
-            name='(auth)'
-            options={{ headerShown: false }}
-            redirect={hasToken}
-          />
+            <Stack.Screen
+              name='(auth)'
+              options={{ headerShown: false }}
+              redirect={hasToken}
+            />
 
-          <Stack.Screen name='+not-found' />
-        </Stack>
-      </I18nProvider>
-      <StatusBar style='auto' />
-    </ThemeProvider>
+            <Stack.Screen name='+not-found' />
+          </Stack>
+        </I18nProvider>
+        <StatusBar style='auto' />
+      </ThemeProvider>
+    </GestureHandlerRootView>
   );
 });
 

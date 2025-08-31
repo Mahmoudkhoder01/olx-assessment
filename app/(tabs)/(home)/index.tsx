@@ -1,36 +1,50 @@
 import CustomImage from '@/components/shared/CustomImage';
 import Input from '@/components/shared/Input';
 import TextResponsive from '@/components/shared/TextResponsive';
+import { useI18n } from '@/context/I18nContext';
 import apartmentsData from '@/data/apartments.json';
 import carsData from '@/data/cars.json';
 import mobilesData from '@/data/mobiles.json';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import { memo, useCallback } from 'react';
-import { FlatList, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { memo, useCallback, useEffect, useState } from 'react';
+import {
+  ActivityIndicator,
+  FlatList,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
 type SectionKey = 'cars' | 'apartments' | 'mobiles';
-
-const SECTIONS: { key: SectionKey; title: string }[] = [
-  { key: 'cars', title: 'Cars' },
-  { key: 'apartments', title: 'Apartments' },
-  { key: 'mobiles', title: 'Mobiles' },
-];
-
-const CATEGORY_ICONS: {
-  key: SectionKey;
-  label: string;
-  icon: keyof typeof Ionicons.glyphMap;
-}[] = [
-  { key: 'cars', label: 'Cars', icon: 'car-sport-outline' },
-  { key: 'apartments', label: 'Homes', icon: 'home-outline' },
-  { key: 'mobiles', label: 'Mobiles', icon: 'phone-portrait-outline' },
-];
 
 type SectionRowProps = { sectionKey: SectionKey };
 
 const SectionRow = memo(({ sectionKey }: SectionRowProps) => {
   const router = useRouter();
+
+  const [loading, setLoading] = useState(true);
+
+  // Simulate async fetch per section to drive a loading state
+  useEffect(() => {
+    let cancelled = false;
+    setLoading(true);
+    const timer = setTimeout(() => {
+      if (!cancelled) setLoading(false);
+    }, 600);
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+    };
+  }, [sectionKey]);
+
+  if (loading) {
+    return (
+      <View style={[styles.rowContainer, { paddingVertical: 12 }]}>
+        <ActivityIndicator />
+      </View>
+    );
+  }
   if (sectionKey === 'cars') {
     return (
       <FlatList
@@ -73,6 +87,7 @@ const SectionRow = memo(({ sectionKey }: SectionRowProps) => {
       />
     );
   }
+
   if (sectionKey === 'apartments') {
     return (
       <FlatList
@@ -115,6 +130,7 @@ const SectionRow = memo(({ sectionKey }: SectionRowProps) => {
       />
     );
   }
+
   // mobiles
   return (
     <FlatList
@@ -159,16 +175,43 @@ SectionRow.displayName = 'SectionRow';
 export default function HomeScreen() {
   const router = useRouter();
 
+  const { i18n } = useI18n();
+
+  const SECTIONS: { key: SectionKey; title: string }[] = [
+    { key: 'cars', title: i18n.t('category_list.cars') },
+    { key: 'apartments', title: i18n.t('category_list.apartments') },
+    { key: 'mobiles', title: i18n.t('category_list.mobiles') },
+  ];
+
+  const CATEGORY_ICONS: {
+    key: SectionKey;
+    label: string;
+    icon: keyof typeof Ionicons.glyphMap;
+  }[] = [
+    {
+      key: 'cars',
+      label: i18n.t('category_list.cars'),
+      icon: 'car-sport-outline',
+    },
+    {
+      key: 'apartments',
+      label: i18n.t('category_list.apartments'),
+      icon: 'home-outline',
+    },
+    {
+      key: 'mobiles',
+      label: i18n.t('category_list.mobiles'),
+      icon: 'phone-portrait-outline',
+    },
+  ];
+
   const renderHeader = useCallback(
     () => (
       <View>
         <Input
-          placeholder='Search'
+          placeholder={i18n.t('home_screen.search')}
           leftIcon={(color) => (
             <Ionicons name='search-outline' size={24} color={color} />
-          )}
-          rightIcon={(color) => (
-            <Ionicons name='filter' size={24} color={color} />
           )}
           editable={false}
           onPress={() => router.push('/(tabs)/(home)/search')}
@@ -176,7 +219,7 @@ export default function HomeScreen() {
 
         <View className='flex-row items-center justify-between'>
           <TextResponsive fontSize={18} fontStyle='semiBold'>
-            All Categories
+            {i18n.t('home_screen.all_categories')}
           </TextResponsive>
         </View>
 

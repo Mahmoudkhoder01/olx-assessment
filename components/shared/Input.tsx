@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 import Error from './Error';
 import { Colors } from '@/constants/Colors';
+import { useI18n } from '@/context/I18nContext';
 
 export type InputProps = TextInputProps & {
   leftIcon?: (color: string) => ReactNode;
@@ -57,6 +58,9 @@ const Input = forwardRef<TextInput, InputProps>(
     ref?: ForwardedRef<TextInput>,
   ) => {
     const scheme = useColorScheme();
+
+    const { isArabic } = useI18n();
+
     const inputRef = useRef<TextInput>(null);
 
     const [isFocused, setIsFocused] = useState(false);
@@ -124,6 +128,7 @@ const Input = forwardRef<TextInput, InputProps>(
                 styles.input,
                 {
                   fontFamily: value ? Fonts.semiBold : Fonts.regular,
+                  textAlign: isArabic ? 'right' : 'left',
                 },
               ]}
               placeholder={placeholder}

@@ -1,5 +1,6 @@
 import CustomImage from '@/components/shared/CustomImage';
 import TextResponsive from '@/components/shared/TextResponsive';
+import { useI18n } from '@/context/I18nContext';
 import apartmentsData from '@/data/apartments.json';
 import carsData from '@/data/cars.json';
 import mobilesData from '@/data/mobiles.json';
@@ -15,6 +16,8 @@ export default function AdDetailsScreen() {
     id?: string;
     idx?: string;
   }>();
+
+  const { i18n } = useI18n();
 
   const { item, category } = useMemo(() => {
     const cat = params.category as Category | undefined;
@@ -61,13 +64,13 @@ export default function AdDetailsScreen() {
 
           {item.mileage ? (
             <TextResponsive fontSize={14} className='text-gray-500'>
-              Mileage: {item.mileage}
+              {i18n.t('ad_details.mileage')} {item.mileage}
             </TextResponsive>
           ) : null}
 
           {item.agent ? (
             <TextResponsive fontSize={14} className='text-gray-500'>
-              Seller: {item.agent}
+              {i18n.t('ad_details.seller')} {item.agent}
             </TextResponsive>
           ) : null}
         </View>
@@ -86,13 +89,14 @@ export default function AdDetailsScreen() {
           </TextResponsive>
 
           <TextResponsive fontSize={14} className='text-gray-500'>
-            Area: {item.area} m² · Beds: {item.bedrooms} · Baths:{' '}
-            {item.bathrooms}
+            {i18n.t('ad_details.area')} {item.area}{' '}
+            {i18n.t('ad_details.area_unit')} · {i18n.t('ad_details.beds')}{' '}
+            {item.bedrooms} · {i18n.t('ad_details.baths')} {item.bathrooms}
           </TextResponsive>
 
           {item.agent ? (
             <TextResponsive fontSize={14} className='text-gray-500'>
-              Agent: {item.agent}
+              {i18n.t('ad_details.agent')} {item.agent}
             </TextResponsive>
           ) : null}
         </View>
@@ -115,7 +119,7 @@ export default function AdDetailsScreen() {
 
           {item.ad_agent_name ? (
             <TextResponsive fontSize={14} className='text-gray-500'>
-              Seller: {item.ad_agent_name}
+              {i18n.t('ad_details.seller')} {item.ad_agent_name}
             </TextResponsive>
           ) : null}
         </View>

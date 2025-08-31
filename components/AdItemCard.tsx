@@ -37,6 +37,7 @@ function AdItemCard({ image, title, subtitle, priceText, onPress }: Props) {
 }
 
 const MemoAdItemCard = memo(AdItemCard);
+
 MemoAdItemCard.displayName = 'AdItemCard';
 
 export default MemoAdItemCard;
